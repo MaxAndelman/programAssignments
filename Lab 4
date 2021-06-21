@@ -1,0 +1,26 @@
+def totalPrice(item1, item2):
+    price = prices[item1] + prices[item2]
+    return("The total price is " + price)
+def priceDiff(item1, item2):
+    price = prices[item1] - prices[item2]
+    return("The differene is " + prices)
+def restock(brand, ammount):
+    newAmmount = shoeStock[brand] * ammount
+    shoeStock[brand] = newAmmount
+def divideStock(brand, ammount):
+    restock(brand, 1/ammount)
+def isType(index, objectType):
+    if type(myDict[index]) ==  "<class \'" + objectType + "\'>":
+        return "True"
+    else:
+        return "False"
+prices = {"Chicken":1.59, "Beef":1.99, "Cheese":1.00, "Milk":2.50}
+myDict = {"pi":3.14, "pie":"dessert", "list":prices, "otherItem":prices["Chicken"]}
+shoeStock = {"brand1":3, "brand2":1, "SB Dunk":20, "Yeezy":8}
+print(prices["Beef"])
+print(myDict["list"])
+prices["Chicken"] = 2
+print(prices["Chicken"])
+prices["Cheese"] +=3
+print(prices["Cheese"])
+print(isType("otherItem", "float"))
